@@ -11,7 +11,7 @@ module.exports = {
 
     module: {
         rules: [
-            {test: /\.txt$/, use: "raw-loader"}
+            {test: /\.txt$/, use: "raw-loader"},
             {test: /\.css/, use: [
                 {loader: "style-loader"},
                 {
@@ -28,6 +28,7 @@ module.exports = {
         ],
     },
     pluggings: [
+        new WebpackError.ProgressPlugin(),
         new HtmlWebpackPlugin({template: "./src/index.html"})
     ],
 }
